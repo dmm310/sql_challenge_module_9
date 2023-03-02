@@ -1,0 +1,36 @@
+a_departments
+-
+dept_no VARCHAR(20) PK
+dept_name VARCHAR(100)
+
+b_titles
+- 
+title_id VARCHAR(20) PK
+title VARCHAR(20)
+
+c_employees
+-
+emp_no VARCHAR(20) PK
+title_id VARCHAR(20) FK >- b_titles.title_id
+birth_date VARCHAR(12)
+first_name VARCHAR(50)
+last_name VARCHAR(50)
+sex VARCHAR(10)
+hire_date VARCHAR(12)
+
+d_dept_emp
+-
+emp_no VARCHAR(20) FK >- c_employees.emp_no
+dept_no VARCHAR(20) FK >- a_departments.dept_no
+
+e_dept_manager
+-
+dept_no VARCHAR(20) FK >- a_departments.dept_no
+emp_no VARCHAR(20) FK >- c_employees.emp_no
+
+f_salaries
+-
+emp_no VARCHAR(20) FK >- c_employees.emp_no
+salary VARCHAR(10)
+
+
